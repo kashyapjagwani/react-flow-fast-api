@@ -1,4 +1,4 @@
-# VectorShift — Pipeline Builder
+# Pipeline Builder
 
 A visual pipeline builder: drag nodes onto a canvas, connect them, and submit the graph to a
 backend that reports node/edge counts and whether the pipeline forms a valid DAG.
@@ -48,12 +48,12 @@ VITE_API_BASE_URL=http://localhost:9000 npm run dev
 
 ## Frontend scripts
 
-| Command           | Description                          |
-| ----------------- | ------------------------------------ |
-| `npm run dev`     | Start the Vite dev server (5173)     |
+| Command           | Description                              |
+| ----------------- | ---------------------------------------- |
+| `npm run dev`     | Start the Vite dev server (5173)         |
 | `npm run build`   | Type-check (`tsc -b`) + production build |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint`    | Run ESLint                           |
+| `npm run preview` | Preview the production build locally     |
+| `npm run lint`    | Run ESLint                               |
 
 ## Backend API
 
