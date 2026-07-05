@@ -23,6 +23,12 @@ pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
 ```
 
+or if the uvcorn cmd does not work then run:
+
+```bash
+python3 -m uvicorn main:app --reload --port 8000
+```
+
 Health check: `GET http://localhost:8000/` → `{"Ping":"Pong"}`.
 Interactive API docs: http://localhost:8000/docs.
 

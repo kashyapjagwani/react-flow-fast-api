@@ -104,7 +104,12 @@ export const PipelineUI = () => {
 
   return (
     <div ref={reactFlowWrapper} className="flex-1">
-      <div className="h-full w-full">
+      <div
+        className="w-full"
+        style={{
+          height: reactFlowWrapper.current?.scrollHeight ?? 400,
+        }}
+      >
         <ReactFlow
           colorMode={theme}
           nodes={nodes}

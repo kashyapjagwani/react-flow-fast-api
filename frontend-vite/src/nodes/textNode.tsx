@@ -24,6 +24,17 @@ export const TextNode = ({ id, selected }: NodeProps) => {
 
   const variables = useMemo(() => extractVariables(text), [text]);
 
+  // Grow the node width to fit the longest line, clamped so it never runs away.
+  // (Height is handled by the auto-growing textarea below.) Roughly 7px per character
+  // at text-sm plus the node's horizontal chrome; the inline width overrides
+  // BaseNode's default w-[220px].
+  const width = useMemo(() => {
+    const longestLine = text
+      .split("\n")
+      .reduce((max, line) => Math.max(max, line.length), 0);
+    return Math.min(460, Math.max(220, longestLine * 7 + 56));
+  }, [text]);
+
   // One target handle per variable, plus the always-present output source. Ids are namespaced
   // with `${id}-` (matching makeFieldNode/LLMNode) and a `-var-` infix so a variable literally
   // named "output" can't collide with the output handle.
@@ -44,12 +55,14 @@ export const TextNode = ({ id, selected }: NodeProps) => {
     updateNodeInternals(id);
   }, [id, variableKey, updateNodeInternals]);
 
-  // Reserve a left gutter for the variable labels so they don't overlap the textarea.
-  // const bodyStyle = variables.length > 0 ? { paddingLeft: "5.5rem" } : undefined;
-
   return (
-    <BaseNode title="Text" handles={handles} selected={selected}>
-      <LabeledTextArea label="Text:" value={text} onChange={onChange} />
+    <BaseNode
+      title="Text"
+      handles={handles}
+      selected={selected}
+      style={{ width }}
+    >
+      <LabeledTextArea label="Text:" value={text} onChange={onChange} autoGrow />
     </BaseNode>
   );
 };

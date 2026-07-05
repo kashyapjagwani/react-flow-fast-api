@@ -62,7 +62,7 @@ def is_dag(nodes: list[NodeModel], edges: list[EdgeModel]) -> bool:
 
 @app.get('/')
 def read_root():
-    return {'Ping': 'Pong'}
+    return {'status': 'server is running and says Ping-Pong'}
 
 
 @app.post('/pipelines/parse')
