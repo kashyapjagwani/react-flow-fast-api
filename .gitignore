@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Environment / local overrides
+.env
+.env.*
+!.env.example
+*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# macOS (this project has been worked on from an exFAT volume that spawns these)
+.DS_Store
+._*
+.AppleDouble
+.Spotlight-V100
+.Trashes
+
+#pdfs
+*.pdf
