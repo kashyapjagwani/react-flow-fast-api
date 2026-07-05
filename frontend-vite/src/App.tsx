@@ -16,7 +16,7 @@ function App() {
         </span> */}
         <div className="flex flex-col text-left leading-tight">
           <h1 className="text-lg font-semibold text-text-h">
-            Pipeline Builder
+            No Code AI Pipeline Builder
           </h1>
           <p className="text-xs text-text">
             Drag nodes onto the canvas and connect them
